@@ -1,4 +1,4 @@
-import wave2 from '../../assets/img/Abstract Paper (2).svg';
+import wave2 from '../../assets/img/Polygon Luminary 2.svg';
 import unlock2 from '../../assets/img/undraw_investor_update_re_qnuu (1).svg';
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
@@ -86,15 +86,15 @@ const UpdateProfile = () => {
                     transition={pageTransition}
                 >
                     <Marquee className="marquee w-full overflow-hidden" speed={200}>
-                        <h1 className="text-2xl md:text-3xl font-bold text-[#00BFA6]">🐱‍👤Update Your Profile!🐱‍👤</h1>
+                        <h1 className="text-2xl md:text-3xl font-bold text-[#f5bd5a]">🐱‍👤Update Your Profile!🐱‍👤</h1>
                     </Marquee>
                     <img src={wave2} className="fixed hidden lg:block h-full" style={{ zIndex: -1 }} />
                     <div className="w-screen h-screen flex flex-col justify-center items-center lg:grid lg:grid-cols-2">
                         <img src={unlock2} className="hidden lg:block w-1/2 hover:scale-150 transition-all duration-500 transform mx-auto" />
                         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center w-1/2">
                             <img src={infoHolder.photoURL} className="w-32 rounded-lg" />
-                            <h2 className="my-8 font-play-fare font-bold text-3xl text-[#00BFA6] md:text-gray-800 text-center">
-                                update your profile <br /> <span className='text-[#00BFA6] md:text-gray-800'>Here</span>
+                            <h2 className="my-8 font-play-fare font-bold text-3xl text-[#f5bd5a] md:text-white text-center">
+                                update your profile <br /> <span className='text-[#f5bd5a] md:text-red-900'>Here</span>
                             </h2>
                             <div className="relative flex items-center">
                                 <FaUser className='text-xl font-bold text-black' />
@@ -119,12 +119,12 @@ const UpdateProfile = () => {
                             <div className="flex justify-center mt-4 mb-4 gap-4">
 
                             </div>
-                            <a href="#" className="mt-4 text-gray-600 font-bold">
-                                Home ? <Link to='/'>Go Back</Link>
+                            <a href="#" className="mt-4 text-2xl text-red-900 md:text-white font-bold">
+                                Home ? <Link to='/' className='text-red-900 underline'>Go Back</Link>
                             </a>
                             <button
                                 type="submit"
-                                className="py-3 px-20 bg-gray-700 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500"
+                                className="py-3 px-20 bg-red-900 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500"
                             >
                                 Update
                             </button>
