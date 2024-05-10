@@ -40,14 +40,14 @@ const Navbar = () => {
     const links = <>
 
         <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/'>Home</NavLink></li>
-        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/allTourist'>Available Foods</NavLink></li>
-        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/addTourist'>Add Food</NavLink></li>
+        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/availableFood'>Available Foods</NavLink></li>
+        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/addFood'>Add Food</NavLink></li>
 
         <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold">
-            <NavLink to='/myList'>Manage My Foods </NavLink>
+            <NavLink to='/manageMyFoods'>Manage My Foods </NavLink>
         </li>
 
-        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/updateProfile'>My Food Request</NavLink></li>
+        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/MyRequest'>My Food Request</NavLink></li>
 
 
     </>
