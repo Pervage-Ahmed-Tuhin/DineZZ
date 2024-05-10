@@ -7,6 +7,7 @@ import Loader from "../Loader/Loader";
 
 
 import { Typewriter } from "react-simple-typewriter";
+import Banner from "../Banner/Banner";
 
 const pageVariants = {
     initial: {
@@ -35,7 +36,7 @@ const pageTransition = {
 
 const Home = () => {
 
-   
+
 
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -65,7 +66,7 @@ const Home = () => {
 
                 >
 
-
+                    <Banner></Banner>
                     <div className="max-w-6xl mx-auto">
 
                         <h1 className="text-3xl font-play-fare font-bold text-center mt-9">
