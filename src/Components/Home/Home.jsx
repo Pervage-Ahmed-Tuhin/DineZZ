@@ -8,7 +8,7 @@ import Loader from "../Loader/Loader";
 
 import { Typewriter } from "react-simple-typewriter";
 import Banner from "../Banner/Banner";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import FeaturedFoods from "../FeaturedFoods/FeaturedFoods";
 
 const pageVariants = {
@@ -94,8 +94,14 @@ const Home = () => {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                             {
-                                data.map((singleData) => <FeaturedFoods key={singleData._id} data={singleData}></FeaturedFoods>)
+                                data.slice(0, 6).map((singleData) => <FeaturedFoods key={singleData._id} data={singleData}></FeaturedFoods>)
                             }
+                        </div>
+
+                        <div className="mt-6 text-center">
+                            <Link to='/availableFood'>
+                                <button className="btn text-white bg-[#f5bd5a] text-xl p-2">ShowAll button</button>
+                            </Link>
                         </div>
 
 
