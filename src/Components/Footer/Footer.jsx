@@ -42,7 +42,7 @@ const Footer = () => {
         >
 
             <div className="footer-left">
-                <h3>Joy<span>Land</span></h3>
+                <h3>Dine<span>rZZ</span></h3>
 
                 <p className="footer-links">
                     <Link to="/">Home</Link>

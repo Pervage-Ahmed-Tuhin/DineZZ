@@ -8,6 +8,8 @@ import Loader from "../Loader/Loader";
 
 import { Typewriter } from "react-simple-typewriter";
 import Banner from "../Banner/Banner";
+import { useLoaderData } from "react-router-dom";
+import FeaturedFoods from "../FeaturedFoods/FeaturedFoods";
 
 const pageVariants = {
     initial: {
@@ -36,7 +38,8 @@ const pageTransition = {
 
 const Home = () => {
 
-
+    const data = useLoaderData();
+    console.log(data);
 
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -69,7 +72,7 @@ const Home = () => {
                     <Banner></Banner>
                     <div className="max-w-6xl mx-auto">
 
-                        <h1 className="text-3xl font-play-fare font-bold text-center mt-9">
+                        <h1 className="text-3xl poppins font-bold text-center mt-9">
 
 
                             <Typewriter
@@ -79,17 +82,25 @@ const Home = () => {
                                 typeSpeed={70}
                                 deleteSpeed={50}
                                 delaySpeed={2000}
-                                words={['Tourist Spots🗺']}
+                                words={['Featured Foods🍴']}
                             />
 
                         </h1>
                         <div className="divider"></div>
-                        <p className="text-xl font-play-fare text-gray-400 text-center mt-4 mb-5">A tourist spot is a location or destination that <br /> attracts visitors from around the world due to its unique features, <br /> cultural significance, natural beauty, historical importance, or recreational opportunities. </p>
+                        <p className="text-xl poppins text-gray-400 text-center mt-4 mb-5">A culinary delight is a dish or cuisine that tantalizes taste buds and brings people together to <br /> indulge in its exquisite flavors, rich heritage, and mouthwatering aromas. <br /> Featured foods on our platform are culinary treasures that <br /> draw food enthusiasts from far and wide, showcasing diverse tastes, cultural traditions, and gastronomic experiences. </p>
 
 
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                            {
+                                data.map((singleData) => <FeaturedFoods key={singleData._id} data={singleData}></FeaturedFoods>)
+                            }
+                        </div>
 
 
                     </div>
+
 
                 </motion.div>
 
