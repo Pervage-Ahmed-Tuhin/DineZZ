@@ -14,6 +14,10 @@ import AvailableFood from './Components/AvailableFood/AvailableFood.jsx';
 import AddFood from './Components/AddFood/AddFood.jsx';
 import MyfoodRequest from './Components/MyFoodRequest/MyfoodRequest.jsx';
 import ManageFoods from './Components/ManageFoods/ManageFoods.jsx';
+import PrivateRoute from './Components/Private/PrivateRoute.jsx';
+import Login from './Components/Login/Login.jsx';
+import Register from './Components/Register/Register.jsx';
+import UpdateProfile from './Components/UpdateUser/UpdateProfile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,15 +35,27 @@ const router = createBrowserRouter([
       },
       {
         path: '/addFood',
-        element: <AddFood></AddFood>
+        element: <PrivateRoute> <AddFood></AddFood></PrivateRoute>
       },
       {
         path: '/MyRequest',
-        element: <MyfoodRequest></MyfoodRequest>
+        element: <PrivateRoute><MyfoodRequest></MyfoodRequest></PrivateRoute>
       },
       {
         path: '/manageMyFoods',
-        element: <ManageFoods></ManageFoods>
+        element: <PrivateRoute><ManageFoods></ManageFoods></PrivateRoute>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
+        path: '/updateProfile',
+        element: <UpdateProfile></UpdateProfile>
       }
     ]
   },
