@@ -8,7 +8,7 @@ const FeaturedFoods = ({ data }) => {
         <div
             className="card card-compact shadow-xl flex flex-col h-full p-4 poppins" >
             <div className="flex-grow flex flex-col justify-between">
-                <figure className="p-4 rounded-lg"><img className="w-full" src={foodImage} alt={foodName} /></figure>
+                <figure className="p-4 rounded-lg"><img className="w-full rounded-lg" src={foodImage} alt={foodName} /></figure>
                 <div className="card-body flex flex-col justify-between p-4">
                     <div className="space-y-4">
                         <h2 className="card-title text-lg font-play-fare text-gray-500">FoodName: {foodName}</h2>
@@ -23,7 +23,7 @@ const FeaturedFoods = ({ data }) => {
 
 
                     </div>
-                    <Link to={`/spotSectionDetails/${_id}`}>
+                    <Link to={`/availableFoodDetails/${_id}`}>
                         <button className="btn bg-[#f5bd5a] w-full text-white font-poppins font-medium mt-4">View details</button>
                     </Link>
                 </div>

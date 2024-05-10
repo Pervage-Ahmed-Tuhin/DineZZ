@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import Loader from "../Loader/Loader";
+import { useLoaderData } from "react-router-dom";
+import { key } from "localforage";
 
 
 
@@ -33,6 +35,8 @@ const pageTransition = {
 
 const MyfoodRequest = () => {
 
+    const loadedData = useLoaderData();
+    console.log(loadedData);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         document.title = "DinerZZ|My Food Request";
@@ -61,10 +65,24 @@ const MyfoodRequest = () => {
                 >
 
 
-                    <div className="max-w-6xl mx-auto">
+                    <div className="max-w-6xl mx-auto space-y-4">
+                        {
+                            loadedData.map(data => {
 
+                                return (
+                                    <div key={data._id} className="flex flex-col md:flex-row justify-center items-center gap-5 bg-[#f5bd5a] shadow-xl p-5">
+                                        <figure><img className="w-full rounded-lg" src={data.foodImage} alt="Movie" /></figure>
+                                        <div className="card-body">
+                                            <h2 className="card-title">DonarName:{data.donator.name}</h2>
+                                            <h2 className="card-title">pickupLocation:{data.pickupLocation}</h2>
+                                            <h2 className="card-title">expiredDateTime:{data.expiredDateTime}</h2>
+                                            <h2 className="card-title">RequestDate:{data.requestDate}</h2>
 
-                        <h1>This is the my food request food page</h1>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
 
 
                     </div>

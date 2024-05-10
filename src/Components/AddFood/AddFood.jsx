@@ -69,7 +69,8 @@ const AddFood = () => {
         const userImage = user.photoURL;
         const donator = {
             image: userImage,
-            name: UserName
+            name: UserName,
+            email: UserEmail
         }
         console.log(donator);
         const newFood = { foodImage, foodName, foodQuantity, pickupLocation, expiredDateTime, additionalNotes, foodStatus, donator };
