@@ -74,7 +74,7 @@ const ManageFoods = () => {
             if (result.isConfirmed) {
 
 
-                fetch(` https://tourism-management-server-one.vercel.app/tourists/${_id}`, {
+                fetch(` http://localhost:5000/delete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
