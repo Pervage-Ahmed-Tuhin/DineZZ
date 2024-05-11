@@ -19,6 +19,7 @@ import Login from './Components/Login/Login.jsx';
 import Register from './Components/Register/Register.jsx';
 import UpdateProfile from './Components/UpdateUser/UpdateProfile.jsx';
 import FoodDetails from './Components/FoodDetails/FoodDetails.jsx';
+import UpdateFood from './Components/Update/UpdateFood.jsx';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,11 @@ const router = createBrowserRouter([
         path: '/availableFoodDetails/:id',
         element: <PrivateRoute><FoodDetails></FoodDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/featuredFood/${params.id}`)
+      },
+      {
+        path: '/updateDataBase/:id',
+        element: <PrivateRoute><UpdateFood></UpdateFood></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/updateFood/${params.id}`)
       }
     ]
   },
