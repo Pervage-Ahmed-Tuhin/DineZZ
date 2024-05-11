@@ -12,6 +12,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import FeaturedFoods from "../FeaturedFoods/FeaturedFoods";
 
 import AskedQuestions from "../Questions/AskedQuestions";
+import HappyClients from "../HappyClients/HappyClients";
 
 const pageVariants = {
     initial: {
@@ -117,6 +118,7 @@ const Home = () => {
 
                         <AskedQuestions></AskedQuestions>
 
+                        <HappyClients></HappyClients>
 
                     </div>
 
