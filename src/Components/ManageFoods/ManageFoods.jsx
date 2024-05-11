@@ -10,6 +10,9 @@ import { key } from "localforage";
 
 
 
+
+
+
 const pageVariants = {
     initial: {
         opacity: 0,
@@ -74,7 +77,7 @@ const ManageFoods = () => {
             if (result.isConfirmed) {
 
 
-                fetch(` http://localhost:5000/delete/${_id}`, {
+                fetch(` https://food-sharing-server-site.vercel.app/delete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -111,8 +114,9 @@ const ManageFoods = () => {
 
                 >
 
+                    
 
-                    <div className="max-w-6xl mx-auto rounded-lg" style={{ backgroundImage: `url(${wave2})` }}>
+                    <div className="max-w-6xl mx-auto rounded-lg min-h-[100vh]" style={{ backgroundImage: `url(${wave2})` }}>
 
 
                         <div className="overflow-x-auto poppins text-gray-900">

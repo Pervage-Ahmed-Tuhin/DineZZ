@@ -86,7 +86,7 @@ const UpdateFood = () => {
         // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
         console.log(updatedFood);
 
-        fetch(`http://localhost:5000/manageUpdateFood/${id}`, {
+        fetch(`https://food-sharing-server-site.vercel.app/manageUpdateFood/${id}`, {
             credentials: 'include',
             method: 'PUT',
             headers: {

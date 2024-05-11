@@ -77,7 +77,7 @@ const AddFood = () => {
         // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
         console.log(newFood);
 
-        fetch('http://localhost:5000/addedFood', {
+        fetch('https://food-sharing-server-site.vercel.app/addedFood', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -123,7 +123,7 @@ const AddFood = () => {
 
 
                         <Marquee className="marquee w-full overflow-hidden" speed={200}>
-                            <h1 className="text-2xl md:text-3xl font-bold text-[#f5bd5a]">🍔Add Your Food!🍔F</h1>
+                            <h1 className="text-2xl md:text-3xl font-bold text-[#f5bd5a]">🍔Add Your Food!🍔</h1>
                         </Marquee>
                         <div className=" p-24" style={{ backgroundImage: `url(${wave2})` }}>
                             <h2 className="text-3xl font-extrabold text-white">Add Food</h2>

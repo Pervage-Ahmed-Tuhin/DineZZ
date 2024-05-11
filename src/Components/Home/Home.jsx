@@ -46,7 +46,7 @@ const Home = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/featuredFood')
+        fetch('https://food-sharing-server-site.vercel.app/featuredFood')
             .then(res => res.json())
             .then(data => {
                 setData(data);

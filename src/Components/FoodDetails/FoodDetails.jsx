@@ -79,7 +79,7 @@ const FoodDetails = () => {
         // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
         console.log(newFood);
 
-        fetch(`http://localhost:5000/requestFood/${_id}`, {
+        fetch(`https://food-sharing-server-site.vercel.app/requestFood/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
