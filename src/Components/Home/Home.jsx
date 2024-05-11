@@ -11,6 +11,8 @@ import Banner from "../Banner/Banner";
 import { Link, useLoaderData } from "react-router-dom";
 import FeaturedFoods from "../FeaturedFoods/FeaturedFoods";
 
+import AskedQuestions from "../Questions/AskedQuestions";
+
 const pageVariants = {
     initial: {
         opacity: 0,
@@ -112,6 +114,8 @@ const Home = () => {
                                 <button className="btn text-white bg-[#f5bd5a] text-xl p-2">ShowAll button</button>
                             </Link>
                         </div>
+
+                        <AskedQuestions></AskedQuestions>
 
 
                     </div>
