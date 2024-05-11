@@ -39,6 +39,7 @@ const AvailableFood = () => {
     const loadedData = useLoaderData();
     console.log(loadedData);
     const [loading, setLoading] = useState(true);
+    const [isTwoColumnLayout, setIsTwoColumnLayout] = useState(false);
     useEffect(() => {
         document.title = "DinerZZ|Available Food";
     }, [])
@@ -67,6 +68,10 @@ const AvailableFood = () => {
         );
         setSortedFoods(filteredFoods);
     }
+
+    const toggleLayout = () => {
+        setIsTwoColumnLayout((prevLayout) => !prevLayout);
+    };
     return (
         <div>
             {loading && <Loader></Loader>}
@@ -92,6 +97,9 @@ const AvailableFood = () => {
                                 <input id="searchField" type="text" placeholder="Type here" className="input input-bordered w-full md:max-w-md " />
                                 <button onClick={handleSearch} className="btn text-white bg-[#f5bd5a] p-2 w-32 h-[50px]"><FaMagnifyingGlass className="text-sm" />Search</button>
                             </div>
+                            <div>
+                                <button onClick={toggleLayout} className="m-1 btn bg-[#f5bd5a] text-white">ChangeLayout</button>
+                            </div>
                             <details className="dropdown">
                                 <summary className="m-1 btn bg-[#f5bd5a] text-white">Sort Your Spots</summary>
                                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
@@ -101,7 +109,7 @@ const AvailableFood = () => {
                             </details>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className={`grid grid-cols-1 md:grid-cols-${isTwoColumnLayout ? '2' : '3'} gap-6`}>
 
                             {
 
@@ -110,7 +118,7 @@ const AvailableFood = () => {
                                     <FeaturedFoods key={data._id} data={data}></FeaturedFoods>
                                 )) : loadedData.map((data) => (
                                     <FeaturedFoods key={data._id} data={data}></FeaturedFoods>
-                                    
+
                                 ))
 
                             }
