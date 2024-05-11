@@ -112,7 +112,7 @@ const ManageFoods = () => {
                 >
 
 
-                    <div className="max-w-6xl mx-auto" style={{ backgroundImage: `url(${wave2})` }}>
+                    <div className="max-w-6xl mx-auto rounded-lg" style={{ backgroundImage: `url(${wave2})` }}>
 
 
                         <div className="overflow-x-auto poppins text-gray-900">
