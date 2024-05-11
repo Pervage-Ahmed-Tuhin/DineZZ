@@ -1,10 +1,12 @@
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import Loader from "../Loader/Loader";
 import { useLoaderData } from "react-router-dom";
-import { key } from "localforage";
+import useAxiosSecure from "../useAxiosSecure/useAxiosSecure";
+import { AuthContext } from "../Authprovider/AuthProvider";
+
 
 
 
@@ -35,9 +37,25 @@ const pageTransition = {
 
 const MyfoodRequest = () => {
 
-    const loadedData = useLoaderData();
-    console.log(loadedData);
+    // const loadedData = useLoaderData();
+    // console.log(loadedData);
+    const { user } = useContext(AuthContext);
+    const [loadedData, setLoadedData] = useState([]);
+    const axiosSecure = useAxiosSecure();
+    const url = `/requestedFood?email=${user?.email}`
     const [loading, setLoading] = useState(true);
+
+
+    useEffect(() => {
+        // fetch(url, { credentials: 'include' })
+        //     .then(res => res.json())
+        //     .then(data => setBookings(data))
+
+        axiosSecure.get(url)
+            .then(res => setLoadedData(res.data))
+
+    }, [url, axiosSecure]);
+
     useEffect(() => {
         document.title = "DinerZZ|My Food Request";
     }, [])

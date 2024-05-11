@@ -38,6 +38,8 @@ const FoodDetails = () => {
     const loadedData = useLoaderData();
     const [loading, setLoading] = useState(true);
 
+    console.log(user.displayName);
+    console.log(user.email);
     useEffect(() => {
         document.title = "Joy land|AllTourist";
     }, [])
@@ -64,13 +66,16 @@ const FoodDetails = () => {
 
         const additionalNotes = form.additionalNotes.value;
 
+        const userEmail = user.email;
+
+        const userName = user.displayName;
 
 
 
 
 
         console.log(donator);
-        const newFood = { additionalNotes, requestDate };
+        const newFood = { additionalNotes, requestDate, userEmail ,userName};
         // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
         console.log(newFood);
 

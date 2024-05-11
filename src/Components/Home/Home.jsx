@@ -38,8 +38,17 @@ const pageTransition = {
 
 const Home = () => {
 
-    const data = useLoaderData();
-    console.log(data);
+    // const data = useLoaderData();
+    // console.log(data);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/featuredFood')
+            .then(res => res.json())
+            .then(data => {
+                setData(data);
+            })
+    }, [])
 
     const [loading, setLoading] = useState(true);
     useEffect(() => {

@@ -9,6 +9,7 @@ const FeaturedFoods = ({ data }) => {
             className="card card-compact shadow-xl flex flex-col h-full p-4 poppins" >
             <div className="flex-grow flex flex-col justify-between">
                 <figure className="p-4 rounded-lg"><img className="w-full rounded-lg" src={foodImage} alt={foodName} /></figure>
+                <div className="divider"></div>
                 <div className="card-body flex flex-col justify-between p-4">
                     <div className="space-y-4">
                         <h2 className="card-title text-lg font-play-fare text-gray-500">FoodName: {foodName}</h2>
@@ -16,6 +17,7 @@ const FeaturedFoods = ({ data }) => {
                             <img className="w-[10%] rounded-full" src={image} alt="" />
                             <h2 className="card-title text-lg font-play-fare text-gray-500">Donator: {name}</h2>
                         </div>
+                        <div className="divider"></div>
                         <p className="text-lg font-play-fare text-gray-500">FoodQuantity : {foodQuantity}</p>
                         <p className="text-lg font-play-fare text-gray-500"><span className="text-[#f5bd5a]">Pick up location : {pickupLocation}</span></p>
                         <p className="text-lg font-play-fare text-gray-500"><span>ExpiredDateTime: {expiredDateTime} </span></p>

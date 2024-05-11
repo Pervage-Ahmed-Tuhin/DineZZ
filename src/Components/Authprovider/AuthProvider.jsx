@@ -10,6 +10,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 const GoogleProvider = new GoogleAuthProvider();
 
 import { GithubAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 const GithubProvider = new GithubAuthProvider();
 
@@ -64,10 +65,25 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const Unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = { email: userEmail };
             setUser(currentUser);
             setInfoHolder(currentUser);
             setLoader(false);
+            if (currentUser) {
+                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log('token response', res.data);
+                    })
+            }
+            else {
+                axios.post('http://localhost:5000/logout', loggedUser, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log(res.data);
+                    })
+            }
 
         });
         return () => {
