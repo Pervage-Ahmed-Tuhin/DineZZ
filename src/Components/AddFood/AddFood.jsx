@@ -65,17 +65,17 @@ const AddFood = () => {
 
         const UserEmail = user.email;
         const UserName = user.displayName;
-        console.log(UserEmail, UserName);
+        // console.log(UserEmail, UserName);
         const userImage = user.photoURL;
         const donator = {
             image: userImage,
             name: UserName,
             email: UserEmail
         }
-        console.log(donator);
+        // console.log(donator);
         const newFood = { foodImage, foodName, foodQuantity, pickupLocation, expiredDateTime, additionalNotes, foodStatus, donator };
         // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
-        console.log(newFood);
+        // console.log(newFood);
 
         fetch('https://food-sharing-server-site.vercel.app/addedFood', {
             method: 'POST',
@@ -86,7 +86,7 @@ const AddFood = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',

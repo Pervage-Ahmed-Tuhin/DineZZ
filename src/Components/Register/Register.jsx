@@ -55,7 +55,7 @@ const Register = () => {
     const onSubmit = (data) => {
         setLoading(true);
         const { email, password, name, photoURL } = data;
-        console.log(email, password, name, photoURL);
+        // console.log(email, password, name, photoURL);
         const passwordCapital = /^(?=.*[A-Z]).+$/;
         const passwordSmall = /^(?=.*[a-z]).+$/;
 
@@ -75,7 +75,7 @@ const Register = () => {
             setLoading(false);
             return;
         }
-        console.log(data);
+        // console.log(data);
 
 
 

@@ -39,7 +39,7 @@ const UpdateProfile = () => {
 
     const [loading, setLoading] = useState(true);
     const { UpdateUserProfile, infoHolder, setInfoHolder, user } = useContext(AuthContext);
-    console.log(infoHolder);
+    // console.log(infoHolder);
     // const { email, name, photoURL, password } = infoHolder;
     const navigate = useNavigate();
     useEffect(() => {
@@ -59,7 +59,7 @@ const UpdateProfile = () => {
     } = useForm();
     const onSubmit = (data) => {
 
-        console.log(data);
+        // console.log(data);
         const { name, photoURL } = data;
         UpdateUserProfile(name, photoURL)
             .then(() => {

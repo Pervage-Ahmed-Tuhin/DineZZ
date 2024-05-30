@@ -37,23 +37,23 @@ const Navbar = () => {
 
 
 
-    const links = <>
+    // const links = <>
 
-        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/'>Home</NavLink></li>
-        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/availableFood'>Available Foods</NavLink></li>
-        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/addFood'>Add Food</NavLink></li>
+    //     <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/'>Home</NavLink></li>
+    //     <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/availableFood'>Available Foods</NavLink></li>
+    //     <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/addFood'>Add Food</NavLink></li>
 
-        {user &&
-            <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold">
-                <NavLink to='/manageMyFoods'>Manage My Foods </NavLink>
-            </li>
+    //     {user &&
+    //         <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold">
+    //             <NavLink to='/manageMyFoods'>Manage My Foods </NavLink>
+    //         </li>
 
-        }
+    //     }
 
-        <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/MyRequest'>My Food Request</NavLink></li>
+    //     <li className="font-play-fare text-xl text-[#f5bd5a] font-semibold"> <NavLink to='/MyRequest'>My Food Request</NavLink></li>
 
 
-    </>
+    // </>
 
     const handleLogout = () => {
         LogOutUser()
@@ -115,13 +115,13 @@ const Navbar = () => {
 
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
-                    <div className="dropdown relative z-[2000]">
+                    {/* <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
 
                       
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1000] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 z-50 rounded-box w-52">
                             {links}
                             <li>
 
@@ -144,26 +144,41 @@ const Navbar = () => {
 
                         </ul>
 
-                    </div>
-                   
+                    </div> */}
+
                     <Link to='/' className="btn btn-ghost  text-base md:text-3xl text-[#f5bd5a] bg-base-200 font-bold mr-3">
 
+                        <div className="hidden md:block">
 
-                        <Typewriter
-                            loop
-                            cursor
-                            cursorStyle='_'
-                            typeSpeed={70}
-                            deleteSpeed={50}
-                            delaySpeed={2000}
-                            words={['DinerZZ']}
-                        />
+                            <Typewriter
+                                loop
+                                cursor
+                                cursorStyle='_'
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={2000}
+                                words={['DinerZZ']}
+                            />
+                        </div>
+                        <h1 className="poppins text-xs md:text-lg text-[#f5bd5a] font-semibold  block md:hidden">DineZZ</h1>
 
                     </Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        {links}
+                <div className="navbar-center">
+                    <ul className="menu menu-horizontal px-1 flex-col md:flex-row ">
+                        <li className="poppins text-xs md:text-lg text-[#f5bd5a] font-semibold"> <NavLink to='/'>Home</NavLink></li>
+                        <li className="poppins text-xs md:text-lg text-[#f5bd5a] font-semibold"> <NavLink to='/availableFood'>Available Foods</NavLink></li>
+                        <li className="font-play-fare text-xs md:text-lg text-[#f5bd5a] font-semibold"> <NavLink to='/addFood'>Add Food</NavLink></li>
+
+                        {user &&
+                            <li className="poppins text-xs md:text-lg text-[#f5bd5a] font-semibold">
+                                <NavLink to='/manageMyFoods'>Manage My Foods </NavLink>
+                            </li>
+
+                        }
+
+                        <li className="poppins text-xs md:text-lg text-[#f5bd5a] font-semibold"> <NavLink to='/MyRequest'>My Food Request</NavLink></li>
+                        
                     </ul>
 
                 </div>
@@ -193,7 +208,7 @@ const Navbar = () => {
 
 
                     {user ? (
-                        <div className="flex  items-center gap-5">
+                        <div className="flex  items-center gap-2">
                             <img
                                 title={user.displayName}
                                 className="rounded-full w-[20%] ml-3"
@@ -201,14 +216,14 @@ const Navbar = () => {
 
                                 alt="You"
                             />
-                            <button onClick={handleLogout} className="btn bg-[#f5bd5a] text-white">
+                            <button onClick={handleLogout} className="btn bg-[#f5bd5a] text-white btn-sm md:btn-md text-sm  md:text-lg ">
                                 LogOut
                             </button>
                         </div>
                     ) : (
                         <div>
                             <Link to="/login">
-                                <button className="btn bg-[#f5bd5a] text-white sm:btn-sm md:btn-md">LogIn</button>
+                                <button className="btn bg-[#f5bd5a] text-white sm:btn-sm md:btn-md">LogIn....</button>
                             </Link>
                             <Link to="/register">
                                 <button className="btn bg-[#f5bd5a] text-white sm:btn-sm md:btn-md">Register</button>

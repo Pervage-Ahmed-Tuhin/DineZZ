@@ -50,10 +50,10 @@ const Login = () => {
 
     const onSubmit = (data) => {
         const { email, password } = data;
-        console.log(email, password);
+        // console.log(email, password);
         loginUser(email, password)
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 toast(`Welcome! ${result.user.displayName}`);
                 setTimeout(() => {
                     setLoading(false);
@@ -62,7 +62,7 @@ const Login = () => {
 
             })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
                 toast.error("Wrong Password!");
                 setLoading(false);
             })
@@ -72,7 +72,7 @@ const Login = () => {
     const handleGoogleLogin = () => {
         GoogleLogin()
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 // setInfoHolder(result.user);
 
                 setInfoHolder({ name: result.user.displayName, email: result.user.email, photoURL: result.user.photoURL });
@@ -91,7 +91,7 @@ const Login = () => {
         GitHUbLogin()
             .then(result => {
 
-                console.log(result.user);
+                // console.log(result.user);
                 // setInfoHolder(result.user);
 
                 setInfoHolder({ name: result.user.displayName, email: result.user.email, photoURL: result.user.photoURL });

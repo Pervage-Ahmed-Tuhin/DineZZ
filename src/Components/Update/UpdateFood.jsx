@@ -38,7 +38,7 @@ const pageTransition = {
 
 const UpdateFood = () => {
     const { id } = useParams();
-    console.log(id)
+    // console.log(id)
     const { user } = useContext(AuthContext);
     const loadedData = useLoaderData();
     // console.log(loadedData);
@@ -73,7 +73,7 @@ const UpdateFood = () => {
 
         const UserEmail = user.email;
         const UserName = user.displayName;
-        console.log(UserEmail, UserName);
+        // console.log(UserEmail, UserName);
         const userImage = user.photoURL;
         const donator = {
             image: userImage,
@@ -84,7 +84,7 @@ const UpdateFood = () => {
         console.log(donator);
         const updatedFood = { foodImage, foodName, foodQuantity, pickupLocation, expiredDateTime, additionalNotes, foodStatus, donator, UserEmail };
         // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
-        console.log(updatedFood);
+        // console.log(updatedFood);
 
         fetch(`https://food-sharing-server-site.vercel.app/manageUpdateFood/${id}`, {
             credentials: 'include',
@@ -96,7 +96,7 @@ const UpdateFood = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',

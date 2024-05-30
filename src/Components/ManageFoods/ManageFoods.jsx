@@ -60,11 +60,11 @@ const ManageFoods = () => {
         }, 1000)
         return () => clearTimeout(delay);
     }, [])
-    console.log(loadedData);
+    // console.log(loadedData);
 
 
     const handleDelete = _id => {
-        console.log(_id);
+        // console.log(_id);
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -82,7 +82,7 @@ const ManageFoods = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',

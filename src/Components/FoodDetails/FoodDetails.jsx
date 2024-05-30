@@ -38,8 +38,8 @@ const FoodDetails = () => {
     const loadedData = useLoaderData();
     const [loading, setLoading] = useState(true);
 
-    console.log(user.displayName);
-    console.log(user.email);
+    // console.log(user.displayName);
+    // console.log(user.email);
     useEffect(() => {
         document.title = "Joy land|AllTourist";
     }, [])
@@ -74,10 +74,10 @@ const FoodDetails = () => {
 
 
 
-        console.log(donator);
+        // console.log(donator);
         const newFood = { additionalNotes, requestDate, userEmail ,userName};
         // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
-        console.log(newFood);
+        // console.log(newFood);
 
         fetch(`https://food-sharing-server-site.vercel.app/requestFood/${_id}`, {
             method: 'PUT',
@@ -88,7 +88,7 @@ const FoodDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
@@ -103,7 +103,7 @@ const FoodDetails = () => {
 
     }
     const now = new Date();
-    console.log(now);
+    // console.log(now);
 
 
     return (

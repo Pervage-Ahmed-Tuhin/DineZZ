@@ -13,6 +13,7 @@ import FeaturedFoods from "../FeaturedFoods/FeaturedFoods";
 
 import AskedQuestions from "../Questions/AskedQuestions";
 import HappyClients from "../HappyClients/HappyClients";
+import ContactUs from "../ContactUs/ContactUs";
 
 const pageVariants = {
     initial: {
@@ -46,7 +47,7 @@ const Home = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('https://food-sharing-server-site.vercel.app/featuredFood')
+        fetch('https://food-sharing-server-site.vercel.app/highestQuantityFood')
             .then(res => res.json())
             .then(data => {
                 setData(data);
@@ -119,6 +120,7 @@ const Home = () => {
                         <AskedQuestions></AskedQuestions>
 
                         <HappyClients></HappyClients>
+                        <ContactUs></ContactUs>
 
                     </div>
 

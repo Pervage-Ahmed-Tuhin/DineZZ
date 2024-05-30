@@ -30,7 +30,7 @@ export default function App() {
     };
 
     return (
-        <div className='max-w-7xl mx-auto rounded-lg'>
+        <div className='max-w-7xl mx-auto'>
 
             <Swiper
                 onSwiper={setSwiper}
@@ -46,7 +46,7 @@ export default function App() {
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
-                className="mySwiper"
+                className="mySwiper rounded-lg"
             >
                 <SwiperSlide>
                     <div className="slide slider-1 flex flex-col  items-center relative bottom-14">
